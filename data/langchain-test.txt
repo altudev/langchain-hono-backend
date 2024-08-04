@@ -1,0 +1,59 @@
+# Sıkça Sorulan Sorular
+Bir şeye mi ihtiyacınız var? İşte en sık aldığımız sorulardan bazıları.
+
+### Yazılım Academy nedir?
+Yazılım Academy, Türkiye'nin en bütçe dostu yazılım eğitim akademisidir. Yazılım eğitimi alarak kariyerinizi bir üst seviyeye taşımak isteyenler için çeşitli üyelik paketleri sunuyoruz.
+
+### Hangi üyelik paketleri mevcut?
+Yazılım Akademisi'nde üç farklı üyelik paketi bulunmaktadır:
+- **Pro Gold**: Başlangıç seviyesi geliştiriciler için idealdir.
+- **Pro Platinum**: Orta ve ileri düzey geliştiriciler için tasarlanmıştır.
+- **Pro Diamond**: Endüstri liderleri için nihai plandır.
+
+### Üyelik paketleri arasındaki farklar nelerdir?
+#### Pro Gold: Başlangıç seviyesi geliştiriciler için idealdir.
+- Tüm kurslara erişim
+- 1 Canlı Bootcamp'e katılım
+- 1 Canlı Workshop'a katılım
+- Öncelikli Destek
+- Pro Gold üyelere özel Discord kanallarına erişim
+
+#### Pro Platinum: Orta ve ileri düzey geliştiriciler için tasarlanmıştır.
+- Tüm kurslara erişim
+- 3 Canlı Bootcamp'e katılım
+- 3 Canlı Workshop'a katılım
+- Daha Öncelikli Destek
+- Kariyer danışmanlığı ve CV hazırlama desteği
+- GitHub ve LinkedIn profil geri bildirimleri
+- Pro Platinum üyelere özel Discord kanallarına erişim
+- Haftalık mentorluk seansları
+- Proje tabanlı öğrenme modülleri
+- Canlı soru-cevap oturumları
+
+#### Pro Diamond: Endüstri liderleri için nihai plandır.
+- Tüm kurslara erişim
+- Sınırsız Canlı Bootcamp'e katılım
+- Sınırsız Canlı Workshop'a katılım
+- En Öncelikli Destek
+- 1-1 Mentorluk Seansları
+- Kod inceleme ve geri bildirim
+- GitHub ve LinkedIn profil geri bildirimleri
+- Kariyer danışmanlığı ve CV hazırlama desteği
+- Pro Diamond üyelere özel Discord kanallarına erişim
+- Proje tabanlı öğrenme modülleri
+- Canlı soru-cevap oturumları
+
+### Nasıl abone olabilirim?
+İlgilendiğiniz üyelik paketinin altındaki 'Abone Ol' butonuna tıklayarak abone olabilirsiniz.
+
+### Canlı Bootcamp ve Workshop'lar nelerdir?
+Canlı Bootcamp ve Workshop'lar, belirli konularda derinlemesine bilgi ve pratik yapma imkanı sunan online eğitimlerdir. Her üyelik paketi, belirli sayıda bu etkinliklere katılım hakkı tanır.
+
+### Öncelikli Destek ne anlama geliyor?
+Öncelikli Destek, üyelerimizin sorularına ve sorunlarına daha hızlı ve öncelikli olarak yanıt verilmesi anlamına gelir. Bu hizmet, üyelik paketine göre farklı seviyelerde sunulmaktadır.
+
+### Üyelik paketleri arasında geçiş yapabilir miyim?
+Evet, mevcut üyeliğinizden daha üst bir pakete geçiş yapabilirsiniz. Bunun için bizimle iletişime geçmeniz yeterlidir.
+
+### Üyelik paketleri iade edilebilir mi?
+Üyelik paketlerimizin iade politikaları, satın alma şartlarına göre değişkenlik gösterebilir. Detaylı bilgi için müşteri hizmetlerimizle iletişime geçebilirsiniz.
