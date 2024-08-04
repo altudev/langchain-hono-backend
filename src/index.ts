@@ -10,6 +10,7 @@ import {PromptTemplate} from "@langchain/core/prompts";
 import {createStuffDocumentsChain} from "langchain/chains/combine_documents";
 import {Ollama} from "@langchain/community/llms/ollama";
 import {createRetrievalChain} from "langchain/chains/retrieval";
+import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 
 // Hono uygulamasının oluşturulması
 const app = new Hono()
@@ -20,6 +21,17 @@ const ollama = new Ollama({
   model: "gemma2:27b", // Kullanılacak model
 });
 
+// Embedding modelinin yapılandırılması
+const embeddings = new OllamaEmbeddings({
+  model: "gemma2:27b",
+  baseUrl: "http://localhost:11434",
+  requestOptions: {
+    useMMap: true,
+    numThread: 6,
+    numGpu: 1,
+  },
+});
+
 // Metin dosyasını okuma fonksiyonu
 const getTextFile = async () => {
   // Dosya yolunun belirlenmesi
@@ -28,6 +40,16 @@ const getTextFile = async () => {
   // Dosyanın okunması ve içeriğinin döndürülmesi
   const data = await fs.readFile(filePath, "utf-8");
   return data;
+}
+
+// PDF dosyasını okuma fonksiyonu
+const loadPdfFile = async () => {
+  // Dosya yolunun belirlenmesi
+  const filePath = path.join(__dirname, "../data/burak-pdf.pdf");
+
+ const loader = new PDFLoader(filePath);
+
+  return await loader.load();
 }
 
 // Kök yol için basit bir yanıt
@@ -53,19 +75,21 @@ app.get('/loadTextEmbeddings', async (c) => {
   // Metnin bölünmesi ve dokümanların oluşturulması
   const output = await splitter.createDocuments([text])
 
-  // Embedding modelinin yapılandırılması
-  const embeddings = new OllamaEmbeddings({
-    model: "gemma2:27b",
-    baseUrl: "http://localhost:11434",
-    requestOptions: {
-      useMMap: true,
-      numThread: 6,
-      numGpu: 1,
-    },
-  });
-
   // Vektör veritabanının oluşturulması
   vectorStore = await MemoryVectorStore.fromDocuments(output, embeddings);
+
+  // Başarı mesajının döndürülmesi
+  const response = {message: "Text embeddings loaded successfully."};
+  return c.json(response);
+})
+
+// Metin embeddingler'ini yükleme endpoint'i
+app.get('/loadPdfEmbeddings', async (c) => {
+  // Metin dosyasının okunması
+  const documents = await loadPdfFile();
+
+  // Vektör veritabanının oluşturulması
+  vectorStore = await MemoryVectorStore.fromDocuments(documents, embeddings);
 
   // Başarı mesajının döndürülmesi
   const response = {message: "Text embeddings loaded successfully."};

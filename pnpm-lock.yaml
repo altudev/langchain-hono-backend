@@ -13,16 +13,19 @@ importers:
         version: 1.12.0
       '@langchain/community':
         specifier: ^0.2.23
-        version: 0.2.23(openai@4.54.0)
+        version: 0.2.23(openai@4.54.0)(pdf-parse@1.1.1)
       '@langchain/core':
         specifier: ^0.2.20
-        version: 0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0)
+        version: 0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
       hono:
         specifier: ^4.5.3
         version: 4.5.3
       langchain:
         specifier: ^0.2.12
-        version: 0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0)
+        version: 0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1)
+      pdf-parse:
+        specifier: ^1.1.1
+        version: 1.1.1
     devDependencies:
       '@types/node':
         specifier: ^20.11.17
@@ -611,6 +614,14 @@ packages:
     resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
     engines: {node: '>=14'}
 
+  debug@3.2.7:
+    resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+
   decamelize@1.2.0:
     resolution: {integrity: sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==}
     engines: {node: '>=0.10.0'}
@@ -912,6 +923,9 @@ packages:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
 
+  node-ensure@0.0.0:
+    resolution: {integrity: sha512-DRI60hzo2oKN1ma0ckc6nQWlHU69RH6xN0sjQTjMpChPfTYvKZdcQFfdYK2RWbJcKyUizSIy/l8OTGxMAM1QDw==}
+
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
@@ -947,6 +961,10 @@ packages:
   p-timeout@3.2.0:
     resolution: {integrity: sha512-rhIwUycgwwKcP9yTOOFK/AKsAopjjCakVqLHePO3CC6Mir1Z99xT+R63jZxAT5lFZLa2inS5h+ZS2GvR99/FBg==}
     engines: {node: '>=8'}
+
+  pdf-parse@1.1.1:
+    resolution: {integrity: sha512-v6ZJ/efsBpGrGGknjtq9J/oC8tZWq0KWL5vQrk2GlzLEQPUDB1ex+13Rmidl1neNN358Jn9EHZw5y07FFtaC7A==}
+    engines: {node: '>=6.8.1'}
 
   resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
@@ -1075,19 +1093,21 @@ snapshots:
 
   '@hono/node-server@1.12.0': {}
 
-  '@langchain/community@0.2.23(openai@4.54.0)':
+  '@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1)':
     dependencies:
-      '@langchain/core': 0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0)
-      '@langchain/openai': 0.2.5(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))
+      '@langchain/core': 0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+      '@langchain/openai': 0.2.5(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))
       binary-extensions: 2.3.0
       expr-eval: 2.0.2
       flat: 5.0.2
       js-yaml: 4.1.0
-      langchain: 0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0)
-      langsmith: 0.1.40(@langchain/core@0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0))(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0)
+      langchain: 0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1)
+      langsmith: 0.1.40(@langchain/core@0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0))(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
       uuid: 10.0.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
+    optionalDependencies:
+      pdf-parse: 1.1.1
     transitivePeerDependencies:
       - '@gomomento/sdk-web'
       - '@langchain/anthropic'
@@ -1106,13 +1126,13 @@ snapshots:
       - peggy
       - pyodide
 
-  '@langchain/core@0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0)':
+  '@langchain/core@0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.12
-      langsmith: 0.1.40(@langchain/core@0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0))(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0)
+      langsmith: 0.1.40(@langchain/core@0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0))(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -1123,9 +1143,9 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/openai@0.2.5(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))':
+  '@langchain/openai@0.2.5(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))':
     dependencies:
-      '@langchain/core': 0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0)
+      '@langchain/core': 0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
       js-tiktoken: 1.0.12
       openai: 4.54.0
       zod: 3.23.8
@@ -1134,9 +1154,9 @@ snapshots:
       - encoding
       - langchain
 
-  '@langchain/textsplitters@0.0.3(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0)':
+  '@langchain/textsplitters@0.0.3(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)':
     dependencies:
-      '@langchain/core': 0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0)
+      '@langchain/core': 0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
       js-tiktoken: 1.0.12
     transitivePeerDependencies:
       - langchain
@@ -1186,6 +1206,10 @@ snapshots:
       delayed-stream: 1.0.0
 
   commander@10.0.1: {}
+
+  debug@3.2.7:
+    dependencies:
+      ms: 2.1.3
 
   decamelize@1.2.0: {}
 
@@ -1263,17 +1287,17 @@ snapshots:
 
   jsonpointer@5.0.1: {}
 
-  langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0):
+  langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1):
     dependencies:
-      '@langchain/core': 0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0)
-      '@langchain/openai': 0.2.5(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))
-      '@langchain/textsplitters': 0.0.3(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0)
+      '@langchain/core': 0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+      '@langchain/openai': 0.2.5(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))
+      '@langchain/textsplitters': 0.0.3(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
       binary-extensions: 2.3.0
       js-tiktoken: 1.0.12
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
       langchainhub: 0.0.11
-      langsmith: 0.1.40(@langchain/core@0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0))(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0)
+      langsmith: 0.1.40(@langchain/core@0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0))(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
       ml-distance: 4.0.1
       openapi-types: 12.1.3
       p-retry: 4.6.2
@@ -1282,14 +1306,15 @@ snapshots:
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
     optionalDependencies:
-      '@langchain/community': 0.2.23(openai@4.54.0)
+      '@langchain/community': 0.2.23(openai@4.54.0)(pdf-parse@1.1.1)
+      pdf-parse: 1.1.1
     transitivePeerDependencies:
       - encoding
       - openai
 
   langchainhub@0.0.11: {}
 
-  langsmith@0.1.40(@langchain/core@0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0))(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0):
+  langsmith@0.1.40(@langchain/core@0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0))(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0):
     dependencies:
       '@types/uuid': 9.0.8
       commander: 10.0.1
@@ -1298,8 +1323,8 @@ snapshots:
       semver: 7.6.3
       uuid: 9.0.1
     optionalDependencies:
-      '@langchain/core': 0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0))(openai@4.54.0)
-      langchain: 0.2.12(@langchain/community@0.2.23(openai@4.54.0))(openai@4.54.0)
+      '@langchain/core': 0.2.20(langchain@0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+      langchain: 0.2.12(@langchain/community@0.2.23(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)(pdf-parse@1.1.1)
       openai: 4.54.0
 
   mime-db@1.52.0: {}
@@ -1334,6 +1359,8 @@ snapshots:
   mustache@4.2.0: {}
 
   node-domexception@1.0.0: {}
+
+  node-ensure@0.0.0: {}
 
   node-fetch@2.7.0:
     dependencies:
@@ -1370,6 +1397,13 @@ snapshots:
   p-timeout@3.2.0:
     dependencies:
       p-finally: 1.0.0
+
+  pdf-parse@1.1.1:
+    dependencies:
+      debug: 3.2.7
+      node-ensure: 0.0.0
+    transitivePeerDependencies:
+      - supports-color
 
   resolve-pkg-maps@1.0.0: {}
 
